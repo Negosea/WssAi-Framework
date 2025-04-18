@@ -5,4 +5,7 @@ Sistema de Inteligência Artificial especializado na análise de plantas de obra
 - Sugerir soluções baseadas em normas técnicas (ABNT, ISO)
 - Aprender com improvisos reais do canteiro de obras
 
-Desenvolvido por Marcos Sea (Nego_sea)# WssAi-Framework
+Desenvolvido por Marcos Sea 
+(Nego_sea)
+
+# WssAi-Framework
