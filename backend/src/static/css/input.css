@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-dark {
+    color: #1a202c; /* Cor cinza escuro */
+}
+
+.text-light {
+    color: #37a53d; /* Cor branca */
+}

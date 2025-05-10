@@ -1,0 +1,2 @@
+"""Módulo wssai.egg-info"""
+

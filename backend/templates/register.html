@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Helena - Login</title>
+    <!-- Importar Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-base: #F4F4F4; /* 60% - Fundo principal */
+            --color-secondary: #2563eb; /* 30% - Elementos secundários */
+            --color-accent: #FF8C00; /* 10% - Destaques */
+        }
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-[var(--color-base)] flex items-center justify-center h-screen">
+    <video class="background-video" autoplay muted loop preload="auto">
+        <source src="/static/video/ai-background.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos HTML5.
+    </video>
+    <div class="bg-white p-8 rounded shadow-md w-96">
+        <h1 class="text-2xl font-bold mb-4 text-center text-[var(--color-secondary)]">Login</h1>
+        {% if error %}
+            <p class="text-red-500 text-sm mb-4">{{ error }}</p>
+        {% endif %}
+        <form method="post" class="space-y-4">
+            <div>
+                <label for="nome" class="block text-sm font-medium text-gray-700">Nome:</label>
+                <input type="text" id="nome" name="nome" required
+                    class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200">
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Senha:</label>
+                <input type="password" id="password" name="password" required
+                    class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200">
+            </div>
+            <button type="submit"
+                class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">
+                Registrar
+            </button>
+        </form>
+        <p class="text-sm text-center text-gray-600 mt-4">
+            Não tem uma conta? <a href="/register" class="text-[var(--color-secondary)] hover:underline">Registre-se</a>
+        </p>
+    </div>
+</body>
+</html>
+
+<!-- Flask application -->
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <!-- Importar Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilo para o vídeo de fundo */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Colocar o vídeo atrás do conteúdo */
+        }
+
+        /* Estilo para o texto animado */
+        .ai-text {
+            font-size: 1.25rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+            animation: typing 3s steps(30, end), blink 0.5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid white;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            from {
+                border-color: transparent;
+            }
+            to {
+                border-color: white;
+            }
+        }
+    </style>
+</head>
+<body class="h-screen flex items-center justify-center">
+    <!-- Vídeo de fundo -->
+    <video class="video-bg" autoplay muted loop>
+        <source src="/static/video/42926-434300944_large.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos HTML5.
+    </video>
+
+    <!-- Conteúdo principal -->
+    <div class="bg-white bg-opacity-80 p-10 rounded-lg shadow-lg text-center w-96">
+        <!-- Texto da IA -->
+        <div class="ai-text">
+            Olá! Estou aqui para ajudar você a começar. 😊
+        </div>
+
+        <div class="flex justify-center mb-6">
+            <img src="https://via.placeholder.com/100" alt="Logo" class="rounded-full">
+        </div>
+        <h1 class="text-dark">Bem-vindo!</h1>
+        <p class="text-dark">Acesse a plataforma colaborativa para digitalizar e gerenciar seus projetos.</p>
+        <ul class="text-left text-gray-600 mb-6">
+            <li class="flex items-center mb-2">
+                <span class="text-green-500 mr-2">✔</span> Digitalize plantas físicas.
+            </li>
+            <li class="flex items-center mb-2">
+                <span class="text-green-500 mr-2">✔</span> Armazene projetos com segurança.
+            </li>
+            <li class="flex items-center">
+                <span class="text-green-500 mr-2">✔</span> Colabore com outros profissionais.
+            </li>
+        </ul>
+        <div class="space-y-4">
+            <a href="/register" class="block w-full border border-green-500 text-green-500 py-2 rounded-lg hover:bg-green-500 hover:text-white transition">
+                Cadastrar
+            </a>
+            <a href="/login" class="block w-full border border-blue-500 text-blue-500 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition">
+                Login
+            </a>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

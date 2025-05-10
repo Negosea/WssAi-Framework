@@ -1,0 +1,1 @@
+# mostra regiões da imagem lidas, para validação

@@ -1,0 +1,8 @@
+# Em .gitignore
+*.db
+instance/
+
+instance/
+uploads/
+*.db
+.env

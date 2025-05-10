@@ -1,0 +1,368 @@
+2025-05-05 17:38:35,870 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-05 17:38:35,871 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 17:38:42,157 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/sea/WssAi-Framework/backend/app.py", line 50, in index
+    return render_template("index.html")
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-05-05 17:38:42,165 - INFO - 127.0.0.1 - - [05/May/2025 17:38:42] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-05-05 17:38:47,869 - INFO - 127.0.0.1 - - [05/May/2025 17:38:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-05 17:40:33,141 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-05 17:40:33,141 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 17:50:22,488 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-05 17:50:22,488 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 17:50:26,818 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/sea/WssAi-Framework/backend/app.py", line 50, in index
+    return render_template("index.html")
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-05-05 17:50:26,826 - INFO - 127.0.0.1 - - [05/May/2025 17:50:26] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-05-05 18:15:16,074 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-05 18:15:16,074 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 18:15:24,682 - INFO - 127.0.0.1 - - [05/May/2025 18:15:24] "GET / HTTP/1.1" 200 -
+2025-05-05 18:15:24,797 - INFO - 127.0.0.1 - - [05/May/2025 18:15:24] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-05-05 18:15:38,615 - INFO - 127.0.0.1 - - [05/May/2025 18:15:38] "GET /register HTTP/1.1" 200 -
+2025-05-05 18:15:56,080 - ERROR - Exception on /register [POST]
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/sea/WssAi-Framework/backend/app.py", line 59, in register
+    if User.query.filter_by(email=email).first():
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.nome AS users_nome, users.email AS users_email, users.password_hash AS users_password_hash 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marcosseadev@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-05 18:15:56,096 - INFO - 127.0.0.1 - - [05/May/2025 18:15:56] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-05-05 18:16:43,612 - INFO - 127.0.0.1 - - [05/May/2025 18:16:43] "GET /register HTTP/1.1" 200 -
+2025-05-05 18:16:48,778 - INFO - 127.0.0.1 - - [05/May/2025 18:16:48] "GET /register HTTP/1.1" 200 -
+2025-05-05 18:16:53,591 - INFO - 127.0.0.1 - - [05/May/2025 18:16:53] "GET /register HTTP/1.1" 200 -
+2025-05-05 18:16:54,985 - INFO - 127.0.0.1 - - [05/May/2025 18:16:54] "[33mGET /static/video/ai-background.mp4 HTTP/1.1[0m" 404 -
+2025-05-05 18:17:01,840 - ERROR - Exception on /register [POST]
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/sea/WssAi-Framework/backend/app.py", line 59, in register
+    if User.query.filter_by(email=email).first():
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.nome AS users_nome, users.email AS users_email, users.password_hash AS users_password_hash 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marcosseadev@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-05 18:17:01,842 - INFO - 127.0.0.1 - - [05/May/2025 18:17:01] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-05-06 20:49:49,617 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 20:49:49,618 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 20:50:00,171 - INFO - 127.0.0.1 - - [06/May/2025 20:50:00] "GET / HTTP/1.1" 200 -
+2025-05-06 20:50:01,447 - INFO - 127.0.0.1 - - [06/May/2025 20:50:01] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-05-06 20:50:08,979 - INFO - 127.0.0.1 - - [06/May/2025 20:50:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-06 20:50:12,971 - INFO - 127.0.0.1 - - [06/May/2025 20:50:12] "GET /register HTTP/1.1" 200 -
+2025-05-06 20:50:14,157 - INFO - 127.0.0.1 - - [06/May/2025 20:50:14] "[33mGET /static/video/ai-background.mp4 HTTP/1.1[0m" 404 -
+2025-05-06 20:50:20,502 - ERROR - Exception on /register [POST]
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/sea/WssAi-Framework/backend/app.py", line 59, in register
+    if User.query.filter_by(email=email).first():
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.nome AS users_nome, users.email AS users_email, users.password_hash AS users_password_hash 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marcosseadev@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-06 20:50:20,552 - INFO - 127.0.0.1 - - [06/May/2025 20:50:20] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-05-06 20:50:54,882 - INFO - 127.0.0.1 - - [06/May/2025 20:50:54] "[32mGET /upload HTTP/1.1[0m" 302 -
+2025-05-06 20:50:54,909 - INFO - 127.0.0.1 - - [06/May/2025 20:50:54] "GET /login HTTP/1.1" 200 -
+2025-05-06 20:50:58,437 - ERROR - Exception on /login [POST]
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/sea/WssAi-Framework/backend/app.py", line 82, in login
+    user = User.query.filter_by(email=email).first()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.nome AS users_nome, users.email AS users_email, users.password_hash AS users_password_hash 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marcosseadev@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-06 20:50:58,441 - INFO - 127.0.0.1 - - [06/May/2025 20:50:58] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-05-06 21:14:15,181 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 21:14:15,181 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 21:14:21,547 - INFO - 127.0.0.1 - - [06/May/2025 21:14:21] "GET / HTTP/1.1" 200 -
+2025-05-06 21:14:21,692 - INFO - 127.0.0.1 - - [06/May/2025 21:14:21] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-05-06 21:14:30,288 - INFO - 127.0.0.1 - - [06/May/2025 21:14:30] "GET /register HTTP/1.1" 200 -
+2025-05-06 21:14:30,663 - INFO - 127.0.0.1 - - [06/May/2025 21:14:30] "[33mGET /static/video/ai-background.mp4 HTTP/1.1[0m" 404 -
+2025-05-06 21:14:37,185 - ERROR - Exception on /register [POST]
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/sea/WssAi-Framework/backend/app.py", line 67, in register
+    if User.query.filter_by(email=email).first():
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/sea/WssAi-Framework/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.nome AS users_nome, users.email AS users_email, users.password_hash AS users_password_hash 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('marcosseadev@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-06 21:14:37,193 - INFO - 127.0.0.1 - - [06/May/2025 21:14:37] "[35m[1mPOST /register HTTP/1.1[0m" 500 -

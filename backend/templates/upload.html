@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelenaAI - Análise de Projetos</title>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css">
+    <style>
+        /* Fundo preto */
+        body {
+            background: rgb(224, 217, 217);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+            position: relative;
+        }
+
+        /* Luz animada (bolha) */
+        .lights {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            animation: growAndPop 2s ease-out forwards;
+            z-index: 0;
+        }
+
+        @keyframes growAndPop {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            70% {
+                transform: translate(-50%, -50%) scale(3);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Dropzone */
+        .dropzone {
+            width: 50%;
+            max-width: 500px;
+            border: 2px dashed #38bdf8;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            color: #38bdf8;
+            text-align: center;
+        }
+
+        .dz-message {
+            font-size: 1.2rem;
+        }
+
+        /* Botões */
+        .upload-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #2563eb;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Vídeo de fundo */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Vídeo de fundo -->
+    <video class="background-video" id="background-video" autoplay muted loop>
+        <source src="/static/video/ai-background.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos HTML5.
+    </video>
+
+    <!-- Dropzone -->
+    <h2>Envie seu arquivo técnico para a IA Helena</h2>
+    <form action="/upload" class="dropzone" id="uploadForm"></form>
+
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <script>
+        Dropzone.options.uploadForm = {
+            maxFiles: 1,
+            acceptedFiles: ".pdf,.csv,.dwg",
+            init: function() {
+                this.on("success", function(file, response) {
+                    alert("✅ Upload concluído: " + response.arquivo + "\nStatus: " + response.status);
+                });
+                this.on("error", function(file, errorMessage) {
+                    alert("❌ Erro no upload: " + errorMessage);
+                });
+            }
+        };
+    </script>
+</body>
+</html>

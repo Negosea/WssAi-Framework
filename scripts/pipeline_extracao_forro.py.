@@ -1,0 +1,73 @@
+# pipeline_extracao_forro.py
+
+import cv2
+import pytesseract
+import numpy as np
+import json
+
+# === CONFIGURACAO INICIAL ===
+IMG_PATH = "./mnt/data/74a2cc96-f921-4d26-b8cb-aaa31b774db5.jpeg"
+
+# === 1. PRE-PROCESSAMENTO ===
+def preprocess_image(image_path):
+    img = cv2.imread(image_path)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    blur = cv2.GaussianBlur(gray, (5, 5), 0)
+    thresh = cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                   cv2.THRESH_BINARY_INV, 11, 2)
+    return img, thresh
+
+# === 2. EXTRACAO DE TEXTO VIA OCR ===
+def extract_text_from_image(image):
+    config = r'--oem 3 --psm 6'
+    text = pytesseract.image_to_string(image, config=config)
+    return text
+
+# === 3. DETECCAO DE CORES DA LEGENDA ===
+def extract_legend_colors(img):
+    # recorte manual aproximado da área da legenda (ajustável conforme necessário)
+    h, w = img.shape[:2]
+    legend_crop = img[int(h*0.8):, :int(w*0.4)]
+
+    # converter para HSV
+    hsv = cv2.cvtColor(legend_crop, cv2.COLOR_BGR2HSV)
+
+    # segmentar cores por cluster
+    legend_data = []
+    color_samples = {
+        "rosa": ([160, 50, 50], [180, 255, 255]),
+        "azul": ([90, 50, 50], [130, 255, 255]),
+        "roxo": ([125, 50, 50], [145, 255, 255]),
+        "ciano": ([80, 50, 50], [100, 255, 255]),
+        "magenta": ([140, 50, 50], [160, 255, 255])
+    }
+
+    for nome_cor, (lower, upper) in color_samples.items():
+        mask = cv2.inRange(hsv, np.array(lower), np.array(upper))
+        if cv2.countNonZero(mask) > 50:
+            legend_data.append(nome_cor)
+
+    return legend_data
+
+# === 4. EXPORTAR EM JSON ===
+def montar_saida(texto, cores):
+    estrutura = {
+        "fonte": "imagem",
+        "texto_extraido": texto,
+        "cores_detectadas": cores,
+        "observacoes": []
+    }
+    return estrutura
+
+# === 5. PIPELINE PRINCIPAL ===
+def pipeline():
+    img, pre = preprocess_image(IMG_PATH)
+    texto = extract_text_from_image(pre)
+    cores = extract_legend_colors(img)
+    dados = montar_saida(texto, cores)
+
+    print("\n=== DADOS EXTRAÍDOS ===")
+    print(json.dumps(dados, indent=4, ensure_ascii=False))
+
+if __name__ == "__main__":
+    pipeline()
