@@ -5,3 +5,8 @@ __pycache__/
 *.log
 .env
 .vscode/
+# Exclua arquivos de uploads e dados
+backend/uploads/
+*.db
+*.pdf
+*.png
