@@ -1,0 +1,158 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "ee6175b0",
+   "metadata": {},
+   "source": [
+    "# Navegação Autônoma de Drones usando Algoritmo A*\n",
+    "MAPA - IA - Marcos Sea - 51_2025"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4d4f61ed",
+   "metadata": {},
+   "source": [
+    "\n",
+    "## Introdução\n",
+    "Este notebook implementa o algoritmo A* (A-Star) para encontrar o caminho mais eficiente em um ambiente urbano simulado, onde bairros representam nós e as conexões representam custos de tempo e bateria.\n",
+    "\n",
+    "A visualização do grafo e o passo-a-passo do algoritmo serão demonstrados.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "38fc1a69",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "# Instalando bibliotecas necessárias\n",
+    "!pip install networkx matplotlib\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "af3a3482",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "import networkx as nx\n",
+    "import matplotlib.pyplot as plt\n",
+    "import heapq\n",
+    "\n",
+    "# Definição do grafo\n",
+    "grafo = {\n",
+    "    'Armazém Central': {'Bairro A': 1, 'Bairro B': 4},\n",
+    "    'Bairro A': {'Bairro C': 2, 'Bairro D': 5},\n",
+    "    'Bairro B': {'Bairro E': 3},\n",
+    "    'Bairro C': {'Aeroporto': 6},\n",
+    "    'Bairro D': {'Aeroporto': 2},\n",
+    "    'Bairro E': {'Bairro F': 1},\n",
+    "    'Bairro F': {'Bairro G': 2},\n",
+    "    'Bairro G': {'Aeroporto': 1},\n",
+    "    'Aeroporto': {}\n",
+    "}\n",
+    "\n",
+    "# Heurísticas\n",
+    "h = {\n",
+    "    'Armazém Central': 10,\n",
+    "    'Bairro A': 8,\n",
+    "    'Bairro B': 7,\n",
+    "    'Bairro C': 6,\n",
+    "    'Bairro D': 5,\n",
+    "    'Bairro E': 4,\n",
+    "    'Bairro F': 3,\n",
+    "    'Bairro G': 2,\n",
+    "    'Aeroporto': 0\n",
+    "}\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6e539b42",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "def a_star_search(graph, start, goal, heuristics):\n",
+    "    open_list = []\n",
+    "    heapq.heappush(open_list, (0 + heuristics[start], start))\n",
+    "    came_from = {}\n",
+    "    g_score = {node: float('inf') for node in graph}\n",
+    "    g_score[start] = 0\n",
+    "    f_score = {node: float('inf') for node in graph}\n",
+    "    f_score[start] = heuristics[start]\n",
+    "    \n",
+    "    while open_list:\n",
+    "        current = heapq.heappop(open_list)[1]\n",
+    "        print(f\"Expandindo: {current}\")\n",
+    "        \n",
+    "        if current == goal:\n",
+    "            path = []\n",
+    "            while current in came_from:\n",
+    "                path.append(current)\n",
+    "                current = came_from[current]\n",
+    "            path.append(start)\n",
+    "            path.reverse()\n",
+    "            return path\n",
+    "\n",
+    "        for neighbor, cost in graph[current].items():\n",
+    "            tentative_g_score = g_score[current] + cost\n",
+    "            if tentative_g_score < g_score[neighbor]:\n",
+    "                came_from[neighbor] = current\n",
+    "                g_score[neighbor] = tentative_g_score\n",
+    "                f_score[neighbor] = g_score[neighbor] + heuristics[neighbor]\n",
+    "                heapq.heappush(open_list, (f_score[neighbor], neighbor))\n",
+    "    \n",
+    "    return None\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5946773c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "# Executar busca A*\n",
+    "path = a_star_search(grafo, 'Armazém Central', 'Aeroporto', h)\n",
+    "print(\"Caminho encontrado:\", path)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f70f1c77",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "# Visualizar o grafo\n",
+    "G = nx.DiGraph()\n",
+    "\n",
+    "for node in grafo:\n",
+    "    for neighbor, weight in grafo[node].items():\n",
+    "        G.add_edge(node, neighbor, weight=weight)\n",
+    "\n",
+    "pos = nx.spring_layout(G, seed=42)  # Layout para estabilidade\n",
+    "edge_labels = {(u, v): d['weight'] for u, v, d in G.edges(data=True)}\n",
+    "\n",
+    "plt.figure(figsize=(12, 8))\n",
+    "nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=2000, font_size=10, font_weight='bold', arrows=True)\n",
+    "nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)\n",
+    "plt.title('Grafo da Cidade para Entrega de Drones')\n",
+    "plt.show()\n"
+   ]
+  }
+ ],
+ "metadata": {},
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

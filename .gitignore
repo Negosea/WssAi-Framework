@@ -1,8 +1,7 @@
-# Em .gitignore
-*.db
-instance/
-
-instance/
-uploads/
-*.db
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.log
 .env
+.vscode/
